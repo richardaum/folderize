@@ -24,6 +24,17 @@
 	],
 	"main": "./dist/folderize.js",
 	"contributes": {
+		"configuration": {
+      "title": "TypeScript",
+      "properties": {
+        "folderize.exportType": {
+          "type": "string",
+					"enum": ["default", "named"],
+          "default": false,
+          "description": "Switch how the index.ts export are generated"
+        }
+      }
+    },
 		"commands": [
 			{
 				"command": "extension.folderize",
