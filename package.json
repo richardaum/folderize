@@ -33,7 +33,7 @@
             "default",
             "star"
           ],
-          "default": false,
+          "default": "default",
           "description": "Switch how the index.ts export are generated"
         }
       }
