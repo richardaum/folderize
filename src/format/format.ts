@@ -1,5 +1,9 @@
-export const formatIndexFile = (name: string) => {
+export const formatIndexFileWithDefaultExport = (name: string) => {
   return `export { default } from './${name}';\n`
+}
+
+export const formatIndexFileWithStarExport = (name: string) => {
+  return `export * from './${name}';\n`
 }
 
 export const formatCssImport = (name: string) => {

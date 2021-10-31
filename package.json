@@ -31,7 +31,7 @@
 					"type": "string",
 					"enum": [
 						"default",
-						"named"
+						"star"
 					],
 					"default": false,
 					"description": "Switch how the index.ts export are generated"

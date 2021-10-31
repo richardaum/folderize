@@ -12,3 +12,5 @@ export type Option = {
   description: string,
   createFile?: string
 }
+
+export type ExportTypeConfiguration = "default" | "star"

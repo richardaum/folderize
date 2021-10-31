@@ -1,10 +1,15 @@
 import * as vscode from "vscode"
 import { mkdirSync, readFileSync, writeFileSync, renameSync } from "fs"
 
-import { Context, Option } from "./types"
+import { Context, ExportTypeConfiguration, Option } from "./types"
 import { getOptions } from "./options"
 import { stringRegex, importRegex, firstEmptyLineRegex } from "./regex"
-import { formatIndexFile, formatImportPath, formatCssImport } from "./format"
+import {
+  formatIndexFileWithDefaultExport,
+  formatImportPath,
+  formatCssImport,
+  formatIndexFileWithStarExport
+} from "./format"
 
 const createEmptyFolder = (c: Context) => {
   mkdirSync(c.folderPath)
@@ -14,9 +19,26 @@ const moveFileIntoFolder = (c: Context) => {
   renameSync(c.path, c.newPath)
 }
 
+const getExportTypeConfiguration = () => {
+  return vscode.workspace.getConfiguration("folderize").get<ExportTypeConfiguration>("exportType")
+}
+
 const createIndexFile = (c: Context, o: Option[]) => {
   const indexPath = c.folderPath + "/index." + c.filePath
-  const indexText = formatIndexFile(c.fileName)
+
+  const exportTypeConfiguration = getExportTypeConfiguration()
+
+  const indexText = (() => {
+    switch (exportTypeConfiguration) {
+      case "default":
+        return formatIndexFileWithDefaultExport(c.fileName)
+      case "star":
+        return formatIndexFileWithStarExport(c.fileName)
+    }
+  })()
+
+  formatIndexFileWithDefaultExport(c.fileName)
+
   writeFileSync(indexPath, indexText)
 }
 
