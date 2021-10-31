@@ -65,7 +65,7 @@
     "watch": "webpack --watch",
     "pretest": "npm run compile",
     "build": "vsce package",
-    "publish": "vsce publish"
+    "push": "vsce publish"
   },
   "devDependencies": {
     "@types/node": "^10.12.21",
