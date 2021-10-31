@@ -1,79 +1,81 @@
 {
-	"name": "folderize",
-	"displayName": "folderize",
-	"description": "Easily convert a Javascript file into a folder with an index file without breaking imports / exports. Supports .js, .jsx, .ts, .tsx.",
-	"version": "0.0.5",
-	"publisher": "ee92",
-	"repository": "https://github.com/ee92/folderize",
-	"icon": "assets/logo.png",
-	"engines": {
-		"vscode": "^1.36.0"
-	},
-	"categories": [
-		"Formatters",
-		"Other"
-	],
-	"keywords": [
-		"folder",
-		"file",
-		"convert",
-		"index"
-	],
-	"activationEvents": [
-		"onCommand:extension.folderize"
-	],
-	"main": "./dist/folderize.js",
-	"contributes": {
-		"configuration": {
-			"title": "TypeScript",
-			"properties": {
-				"folderize.exportType": {
-					"type": "string",
-					"enum": [
-						"default",
-						"star"
-					],
-					"default": false,
-					"description": "Switch how the index.ts export are generated"
-				}
-			}
-		},
-		"commands": [
-			{
-				"command": "extension.folderize",
-				"title": "Folderize"
-			}
-		],
-		"menus": {
-			"editor/context": [
-				{
-					"command": "extension.folderize",
-					"group": "boilerplate@1"
-				}
-			],
-			"explorer/context": [
-				{
-					"command": "extension.folderize",
-					"group": "boilerplate@1"
-				}
-			]
-		}
-	},
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "webpack",
-		"watch": "webpack --watch",
-		"pretest": "npm run compile"
-	},
-	"devDependencies": {
-		"@types/node": "^10.12.21",
-		"@types/vscode": "^1.36.0",
-		"prettier": "^2.4.1",
-		"ts-loader": "^6.0.4",
-		"tslint": "^5.12.1",
-		"typescript": "^3.3.1",
-		"webpack": "^5.61.0",
-		"webpack-cli": "^4.9.1"
-	},
-	"license": "SEE LICENSE IN LICENSE.md"
+  "name": "folderize",
+  "displayName": "folderize",
+  "description": "Easily convert a Javascript file into a folder with an index file without breaking imports / exports. Supports .js, .jsx, .ts, .tsx.",
+  "version": "0.0.5",
+  "publisher": "ee92",
+  "repository": "https://github.com/ee92/folderize",
+  "icon": "assets/logo.png",
+  "engines": {
+    "vscode": "^1.36.0"
+  },
+  "categories": [
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "folder",
+    "file",
+    "convert",
+    "index"
+  ],
+  "activationEvents": [
+    "onCommand:extension.folderize"
+  ],
+  "main": "./dist/folderize.js",
+  "contributes": {
+    "configuration": {
+      "title": "TypeScript",
+      "properties": {
+        "folderize.exportType": {
+          "type": "string",
+          "enum": [
+            "default",
+            "star"
+          ],
+          "default": false,
+          "description": "Switch how the index.ts export are generated"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "extension.folderize",
+        "title": "Folderize"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "extension.folderize",
+          "group": "boilerplate@1"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "extension.folderize",
+          "group": "boilerplate@1"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "pretest": "npm run compile",
+    "build": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.21",
+    "@types/vscode": "^1.36.0",
+    "prettier": "^2.4.1",
+    "ts-loader": "^6.0.4",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.1",
+    "webpack": "^5.61.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "license": "SEE LICENSE IN LICENSE.md"
 }
