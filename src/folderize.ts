@@ -20,7 +20,7 @@ const moveFileIntoFolder = (c: Context) => {
 }
 
 const getExportTypeConfiguration = () => {
-  return vscode.workspace.getConfiguration("folderize").get<ExportTypeConfiguration>("exportType")
+  return vscode.workspace.getConfiguration("folderizr").get<ExportTypeConfiguration>("exportType")
 }
 
 const createIndexFile = (c: Context, o: Option[]) => {

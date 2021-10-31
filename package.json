@@ -1,10 +1,10 @@
 {
-  "name": "folderize",
-  "displayName": "folderize",
+  "name": "folderizr",
+  "displayName": "folderizr",
   "description": "Easily convert a Javascript file into a folder with an index file without breaking imports / exports. Supports .js, .jsx, .ts, .tsx.",
-  "version": "0.0.5",
-  "publisher": "ee92",
-  "repository": "https://github.com/ee92/folderize",
+  "version": "0.0.1",
+  "publisher": "richardaum",
+  "repository": "https://github.com/richardaum/folderize",
   "icon": "assets/logo.png",
   "engines": {
     "vscode": "^1.36.0"
@@ -20,14 +20,14 @@
     "index"
   ],
   "activationEvents": [
-    "onCommand:extension.folderize"
+    "onCommand:extension.folderizr"
   ],
-  "main": "./dist/folderize.js",
+  "main": "./dist/folderizr.js",
   "contributes": {
     "configuration": {
       "title": "TypeScript",
       "properties": {
-        "folderize.exportType": {
+        "folderizr.exportType": {
           "type": "string",
           "enum": [
             "default",
@@ -40,20 +40,20 @@
     },
     "commands": [
       {
-        "command": "extension.folderize",
-        "title": "Folderize"
+        "command": "extension.folderizr",
+        "title": "folderizr"
       }
     ],
     "menus": {
       "editor/context": [
         {
-          "command": "extension.folderize",
+          "command": "extension.folderizr",
           "group": "boilerplate@1"
         }
       ],
       "explorer/context": [
         {
-          "command": "extension.folderize",
+          "command": "extension.folderizr",
           "group": "boilerplate@1"
         }
       ]
