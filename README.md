@@ -14,11 +14,7 @@ Note: this is a fork of [folderize](https://github.com/ee92/folderize), as it se
 
 ### Install
 
-Download the latest version from the Visual Studio Marketplace [here](https://marketplace.visualstudio.com/items?itemName=ee92.folderizr)
-
-### Donate
-
-If you you find this extension useful, you can make a donation [here](https://paypal.me/650egor)
+Download the latest version from the Visual Studio Marketplace [here](https://marketplace.visualstudio.com/items?itemName=richardaum.folderizr)
 
 ### License
 
