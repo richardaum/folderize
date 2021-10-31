@@ -6,7 +6,7 @@ const config = {
   entry: "./extension.ts",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "folderize.js",
+    filename: "folderizr.js",
     libraryTarget: "commonjs2"
   },
   externals: {
